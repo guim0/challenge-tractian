@@ -1,0 +1,14 @@
+.img-assets {
+  max-width: 330px;
+  border-radius: 1rem;
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 979px) {
+  .details {
+    flex-direction: column;
+  }
+}
