@@ -1,4 +1,4 @@
-import { Card } from "antd";
+import { Card, Progress } from "antd";
 import Title from "antd/es/typography/Title";
 import { useEffect, useState } from "react";
 import { IAssets } from "../../@types/assets";
@@ -33,16 +33,24 @@ export const Assets = () => {
       </Title>
     );
   }
-  const options = {};
+
   return (
     <>
       {assets?.map((items: IAssets, index) => (
         <Card
           title={`type: ${items.model} - name: ${items.name}`}
           className="card"
+          key={index}
         >
           <div className="details" key={index}>
             <div>
+              <Title level={5} type="secondary">
+                Health Score
+              </Title>
+              <Progress
+                percent={items.healthscore}
+                status={items.healthscore > 40 ? "normal" : "exception"}
+              />
               <img className="img-assets" src={items.image} alt={items.name} />
 
               <Title level={4}> Specifications</Title>

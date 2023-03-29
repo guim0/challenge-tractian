@@ -23,9 +23,10 @@ function App() {
       </Title>
     );
   }
+
   return (
     <div className="app">
-      <Title level={3}> Welcome, {data.map((i: any) => i.name)}</Title>
+      <Title level={3}> Welcome, {data?.map((i: any) => i?.name)}</Title>
 
       <Assets />
     </div>
