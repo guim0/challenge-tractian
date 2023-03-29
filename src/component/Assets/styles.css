@@ -1,6 +1,9 @@
 .img-assets {
+  margin: 1rem;
   max-width: 330px;
+  width: 100%;
   border-radius: 1rem;
+  margin: 0 auto;
 }
 .details {
   display: flex;
