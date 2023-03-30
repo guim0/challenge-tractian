@@ -58,20 +58,20 @@ export const Assets = () => {
               <ul>
                 {items.specifications.maxTemp > 0 && (
                   <li>
-                    <span>Max Temp:</span>
-                    {items.specifications.maxTemp}
+                    <span>Max Temp: </span>
+                    {items.specifications.maxTemp}°C
                   </li>
                 )}
                 {items.specifications.power > 0 && (
                   <li>
                     <span>Power: </span>
-                    {items.specifications.power}
+                    {items.specifications.power} kWh
                   </li>
                 )}
                 {items.specifications.rpm && (
                   <li>
                     <span>RPM: </span>
-                    {items.specifications.rpm}
+                    {items.specifications.rpm} rpm
                   </li>
                 )}
               </ul>
@@ -107,21 +107,22 @@ export const Assets = () => {
                 Last Uptime at: {formatDate(items.metrics.lastUptimeAt)}
               </Title>
             </div>
-
-            <ul>
-              <Title level={3}>Health History </Title>
-              <span>(Status, TimeStamp)</span>
-              {items.healthHistory.map((i, index) => (
-                <div key={index}>
-                  <li>
-                    <Title level={5} type={statusAssets(items.status)}>
-                      {items.status}
-                    </Title>
-                  </li>
-                  <li>{formatDate(i.timestamp)}</li>
-                </div>
-              ))}
-            </ul>
+            <Card title="Health History">
+              <ul>
+                <Title level={3}> </Title>
+                <span>(Status, TimeStamp)</span>
+                {items.healthHistory.map((i, index) => (
+                  <div key={index}>
+                    <li>
+                      <Title level={5} type={statusAssets(items.status)}>
+                        {items.status}
+                      </Title>
+                    </li>
+                    <li>{formatDate(i.timestamp)}</li>
+                  </div>
+                ))}
+              </ul>
+            </Card>
           </div>
         </Card>
       ))}
