@@ -1,7 +1,9 @@
 .app {
   padding: 1rem;
 }
-
+.companies {
+  max-width: 400px;
+}
 .header {
   display: flex;
   justify-content: space-between;

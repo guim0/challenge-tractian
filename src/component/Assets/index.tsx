@@ -1,17 +1,17 @@
-import { Button, Card, Progress, Tree } from "antd";
+import { Card, Progress } from "antd";
 import Title from "antd/es/typography/Title";
 import { useEffect, useState } from "react";
 import { IAssets } from "../../@types/assets";
 
+import Highcharts from "highcharts";
 import useApiData from "../../hooks/useApi";
 import { api } from "../../services/api";
 import { formatDate } from "../../utils/formatDate";
-import { statusAssets } from "../../utils/statusAssets";
-import Highcharts from "highcharts";
-import HighchartsReact from "highcharts-react-official";
-import "./styles.css";
 import { formatHours } from "../../utils/formatHours";
-import { useNavigate } from "react-router-dom";
+import { statusAssets } from "../../utils/statusAssets";
+import "./styles.css";
+import { HighchartsReact } from "highcharts-react-official";
+
 export const Assets = () => {
   const [assets, setAssets] = useState<IAssets[]>([]);
   const { data, loading, error } = useApiData(`${api}/assets`);
@@ -40,7 +40,7 @@ export const Assets = () => {
       {assets?.map((items: IAssets, index) => (
         <Card
           title={`type: ${items.model} - name: ${items.name}`}
-          className="card"
+          className="cardAssets"
           key={index}
         >
           <div className="details" key={index}>
@@ -52,7 +52,7 @@ export const Assets = () => {
                 percent={items.healthscore}
                 status={items.healthscore > 40 ? "normal" : "exception"}
               />
-              <img className="img-assets" src={items.image} alt={items.name} />
+              <img className="imgAssets" src={items.image} alt={items.name} />
 
               <Title level={4}> Specifications</Title>
               <ul>

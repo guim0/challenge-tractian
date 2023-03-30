@@ -18,6 +18,10 @@ type ICheckList = {
   completed: boolean;
   task: string;
 };
+export interface ICompanies {
+  id: number;
+  name: string;
+}
 export interface IAssets {
   assignedUserIds: number[];
   companyId: number;

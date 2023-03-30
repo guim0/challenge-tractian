@@ -1,13 +1,4 @@
-import {
-  Badge,
-  Button,
-  Card,
-  Progress,
-  Skeleton,
-  Steps,
-  Table,
-  Tag,
-} from "antd";
+import { Button, Card, Skeleton, Tag } from "antd";
 import Title from "antd/es/typography/Title";
 import { useEffect, useState } from "react";
 import { ICheckList, IWorkOrders } from "../@types/assets";

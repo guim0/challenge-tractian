@@ -7,6 +7,12 @@
 
 ---
 
+### Deployed at vercel
+
+[Click here to access](https://challenge-tractian.vercel.app/)
+
+---
+
 ### Techs and libs used on the project
 
 - [Vite](https://vitejs.dev/)

@@ -1,10 +1,10 @@
-.card {
+.cardAssets {
   padding: 1rem;
 }
 
-.img-assets {
+.imgAssets {
   margin: 1rem;
-  max-width: 400px;
+  max-width: 600px;
   width: 100%;
   border-radius: 1rem;
   margin: 0 auto;
