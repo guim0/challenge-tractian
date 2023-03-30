@@ -39,7 +39,7 @@ export const WorkOrders = () => {
   }
   return (
     <main className="orders">
-      <header>
+      <header className="headerWorks">
         <Title level={3}>Work Orders</Title>
         <Button size="large" type="primary" onClick={() => navigate(-1)}>
           Return to Home
