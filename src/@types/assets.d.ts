@@ -14,6 +14,10 @@ type ISpecifications = {
   rpm: number | null;
 };
 
+type ICheckList = {
+  completed: boolean;
+  task: string;
+};
 export interface IAssets {
   assignedUserIds: number[];
   companyId: number;
@@ -28,4 +32,29 @@ export interface IAssets {
   status: string;
   unitId: number;
   specifications: ISpecifications;
+}
+
+export interface IUsers {
+  companyId: number;
+  email: string;
+  id: number;
+  name: string;
+  unitId: number;
+}
+
+export interface IUnits {
+  companyId: number;
+  id: number;
+  name: string;
+}
+
+export interface IWorkOrders {
+  assetId: number;
+  assignedUserIds: number[];
+  checklist: ICheckList[];
+  description: string;
+  id: number;
+  priority: string;
+  status: string;
+  title: string;
 }

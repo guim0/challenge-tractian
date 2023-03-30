@@ -1,4 +1,4 @@
-import { Card, Progress } from "antd";
+import { Button, Card, Progress, Tree } from "antd";
 import Title from "antd/es/typography/Title";
 import { useEffect, useState } from "react";
 import { IAssets } from "../../@types/assets";
@@ -11,31 +11,32 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import "./styles.css";
 import { formatHours } from "../../utils/formatHours";
+import { useNavigate } from "react-router-dom";
 export const Assets = () => {
   const [assets, setAssets] = useState<IAssets[]>([]);
   const { data, loading, error } = useApiData(`${api}/assets`);
+
   useEffect(() => {
     setAssets(data);
   }, [data]);
 
   if (loading) {
     return (
-      <Title level={2} type="secondary">
-        Carregando...
-      </Title>
+      <Card loading={loading} style={{ height: 200, marginBottom: "1rem" }} />
     );
   }
 
   if (error) {
     return (
       <Title level={2} type="warning">
-        Erro ao carregar os dados: {error.message}
+        Something unexpected happened: {error.message}
       </Title>
     );
   }
 
   return (
     <>
+      <Title level={3}>Assets</Title>
       {assets?.map((items: IAssets, index) => (
         <Card
           title={`type: ${items.model} - name: ${items.name}`}
@@ -106,8 +107,10 @@ export const Assets = () => {
                 Last Uptime at: {formatDate(items.metrics.lastUptimeAt)}
               </Title>
             </div>
+
             <ul>
               <Title level={3}>Health History </Title>
+              <span>(Status, TimeStamp)</span>
               {items.healthHistory.map((i, index) => (
                 <div key={index}>
                   <li>

@@ -1,0 +1,22 @@
+.app {
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.contentHeader {
+  display: flex;
+  gap: 2rem;
+}
+@media screen and (max-width: 979px) {
+  .contentHeader {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

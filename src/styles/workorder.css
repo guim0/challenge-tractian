@@ -1,0 +1,19 @@
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards {
+  max-width: 400px;
+  width: 100%;
+}
+
+.orders {
+  padding: 2rem;
+}
+
+.checklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

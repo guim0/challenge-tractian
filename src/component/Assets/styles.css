@@ -1,6 +1,10 @@
+.card {
+  padding: 1rem;
+}
+
 .img-assets {
   margin: 1rem;
-  max-width: 330px;
+  max-width: 400px;
   width: 100%;
   border-radius: 1rem;
   margin: 0 auto;
@@ -10,8 +14,10 @@
   justify-content: space-between;
   align-items: center;
 }
+
 @media screen and (max-width: 979px) {
   .details {
     flex-direction: column;
+    padding: 0.3rem;
   }
 }

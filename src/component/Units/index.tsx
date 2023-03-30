@@ -1,23 +1,22 @@
 import { Card, Carousel, Tree } from "antd";
 import Title from "antd/es/typography/Title";
 import { useEffect, useState } from "react";
-import { IUsers } from "../../@types/assets";
+import { IUnits, IUsers } from "../../@types/assets";
 import useApiData from "../../hooks/useApi";
 import { api } from "../../services/api";
 import "./style.css";
-
-export const Users = () => {
-  const [user, setUser] = useState<IUsers[]>([]);
-  const { data, loading, error } = useApiData(`${api}/users`);
+export const Units = () => {
+  const [unit, setUnit] = useState<IUsers[]>([]);
+  const { data, loading, error } = useApiData(`${api}/units`);
   useEffect(() => {
-    setUser(data);
+    setUnit(data);
   }, [data]);
 
   if (loading) {
     return (
       <Card
         loading={loading}
-        style={{ height: 200, width: 320, marginBottom: "1rem" }}
+        style={{ height: 120, width: 320, marginBottom: "1rem" }}
       />
     );
   }
@@ -33,14 +32,13 @@ export const Users = () => {
   return (
     <div>
       <Title level={4} type="secondary">
-        Current Users
+        Current Units
       </Title>
       <div className="carousel">
         <Carousel>
-          {user?.map((items: IUsers, index) => (
+          {unit?.map((items: IUnits, index) => (
             <div key={index} className="content">
               <p>{items.name}</p>
-              <p>{items.email}</p>
             </div>
           ))}
         </Carousel>
